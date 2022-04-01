@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="sub-header">{{title$ | async}}</mat-toolbar>
+
+<div class="container">
+  <div class="sidenav">
+    <mat-action-list>
+      <mat-list-item *ngFor="let item of items" routerLink="{{item.path}}" routerLinkActive="active">
+        {{cleanName(item.component.name)}}
+      </mat-list-item>
+    </mat-action-list>
+  </div>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

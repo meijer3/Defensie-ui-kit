@@ -1,0 +1,32 @@
+<h1>Welcome MinDef UI-kit</h1>
+
+<p>For now its more a webpage, which we can later change in an NPM package, which the whole of defensie can download. Or
+  it can even be opensource (Defensie, I know but its just styling...)</p>
+
+
+<h2>Plus-min</h2>
+<duik-plusmin [(value)]="fontsize" [min]="14" [max]="18">
+  Label of plus-min: {{ fontsize }}px
+</duik-plusmin>
+
+<h2>Toggle</h2>
+<duik-toggle [(value)]="booleanFlag">Label of toggle: {{booleanFlag}}</duik-toggle>
+
+
+<h2>Checkboxes and radio buttons</h2>
+<p>Only SCSS overruling</p>
+<mat-checkbox [checked]="booleanFlag" (change)="booleanFlag = $event.checked"> 1 Check box</mat-checkbox>
+<mat-checkbox [checked]="booleanFlag" (change)="booleanFlag = $event.checked"> 2 Check box</mat-checkbox>
+
+<mat-divider></mat-divider>
+<mat-radio-group (ngModelChange)="updateTheme = $event" [ngModel]="theme">
+  <mat-radio-button *ngFor="let theme of themesEnum | keyvalue" [value]="theme.value">{{theme.value}}</mat-radio-button>
+</mat-radio-group>
+
+<h2>Inputs</h2>
+
+<p>for now its just a simple HTML input, we should change to mat-inputs for error checking and such</p>
+<input [value]=lineValue />
+<input value="seconds input line should clear" />
+
+<textarea class="cop-form-input border-accent" placeholder="placeholder" [(ngModel)]="lineValue"></textarea>

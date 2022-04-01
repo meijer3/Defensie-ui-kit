@@ -1,0 +1,27 @@
+.plusandmin{
+  display: flex;
+  justify-content: flex-end;
+  height: 36px;
+  align-items: center;
+  margin: 8px 0;
+
+  mat-label{
+      flex: 1 1 auto;
+  }   
+  input{
+      flex: 0 1 120px;
+      text-align: center;
+      height: 44px;
+  }
+  button{
+      min-width: 36px;
+      height: 36px;
+      width: 36px;
+      padding: 0px;
+      cop-icon{
+          transform: scale(0.8);
+          transform-origin: center;
+          overflow: visible;
+      }
+  }
+  }

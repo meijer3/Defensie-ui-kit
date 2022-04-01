@@ -1,0 +1,175 @@
+@use "sass:map";
+@import "variables";
+@import "fonts";
+@include mat-core();
+
+/************************
+ Theming section
+************************/
+
+$huisstijl-typography: mat-typography-config(
+  $font-family: "'Sans', verdana, sans-serif",
+  // Not really used yet?
+  $display-1: mat-typography-level(1em, 1em, 100),
+  // Not really used yet?
+  $display-2: mat-typography-level(1em, 1em, 100),
+  // Not really used yet?  // Not really used yet?
+  $display-3: mat-typography-level(1em, 1em, 100),
+  // Not really used yet? // Not really used yet?
+  $display-4: mat-typography-level(1em, 1em, 100),
+  // H1 - (e.g. onboarding)
+  $headline: mat-typography-level(1em, 1.1em, 700),
+  // H2
+  $title: mat-typography-level(1.3em, 1.3em, 100),
+  // H3 - (e.g. onboarding sub)
+  $subheading-2: mat-typography-level(1em, 1em, 100),
+  // H3 - (e.g. onboarding sub)
+  $subheading-1: mat-typography-level(1em, 1em, 100),
+  // normal text
+  $body-1: mat-typography-level(1em, 1em, 100),
+  // bold text
+  $body-2: mat-typography-level(1em, 1em, 700),
+  // sub text
+  $caption: mat-typography-level(0.9em, 1.2em, 100),
+);
+@include angular-material-typography($huisstijl-typography);
+@include mat-core($huisstijl-typography);
+@mixin cop-theme($theme) {
+  $color: mat-get-color-config($theme);
+  @include cop-color($color);
+}
+
+// These changes are global. Rijkshuistijl tweaks of the ng-material theme.
+@mixin cop-color($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+  // $warn: map-get($config, warn); // thretaire?
+  $foreground: map-get($config, foreground);
+  $background: map-get($config, background);
+
+  ////////// Simple resuable singlefocus classes //////////
+  .background-primary {
+    background-color: mat-color($primary);
+  }
+  .background-accent {
+    background-color: mat-color($accent);
+  }
+  .border-primary {
+    border-color: mat-color($primary);
+  }
+  .border-accent {
+    border-color: mat-color($accent);
+  }
+  .text-primary {
+    color: mat-color($primary);
+  }
+  .text-accent {
+    color: mat-color($accent);
+  }
+
+  .svg-primary {
+    fill: mat-color($primary);
+  }
+  .svg-accent {
+    fill: mat-color($accent);
+  }
+}
+@function palette($color) {
+  $contrast: #ffffff;
+  $palette: (
+    100: $color,
+    200: $color,
+    300: $color,
+    400: $color,
+    500: $color,
+    600: $color,
+    700: $color,
+    800: $color,
+    900: $color,
+    A100: $color,
+    contrast: (
+      50: $contrast,
+      100: $contrast,
+      200: $contrast,
+      300: $contrast,
+      400: $contrast,
+      500: $contrast,
+      600: $contrast,
+      700: $contrast,
+      800: $contrast,
+      900: $contrast,
+      A100: $contrast,
+    ),
+  );
+  @return $palette;
+}
+
+// Dark theme
+$dark-primary-palette: mat-palette(palette($kmar-primary));
+$dark-accent-palette: mat-palette(palette($kmar-accent));
+$dark-theme: mat-dark-theme($dark-primary-palette, $dark-accent-palette);
+.dark-theme {
+  @include angular-material-color($dark-theme);
+  @include cop-theme($dark-theme);
+}
+
+// Contrast theme
+$contrast-primary-palette: mat-palette(palette($kmar-primary));
+$contrast-accent-palette: mat-palette(palette($kmar-primary));
+$contrast-theme: mat-light-theme(
+  $contrast-primary-palette,
+  $contrast-accent-palette
+);
+.contrast-theme {
+  @include angular-material-color($contrast-theme);
+  @include cop-theme($contrast-theme);
+}
+
+// mac theme
+$mac-primary-palette: mat-palette(palette($mac-primary));
+$mac-accent-palette: mat-palette(palette($mac-accent));
+$mac-theme: mat-light-theme($mac-primary-palette, $mac-accent-palette);
+.theme-mac {
+  @include angular-material-theme($mac-theme);
+  @include cop-theme($mac-theme);
+}
+
+// eodd theme
+$eodd-primary-palette: mat-palette(palette($eodd-primary));
+$eodd-accent-palette: mat-palette(palette($eodd-accent));
+$eodd-theme: mat-light-theme($eodd-primary-palette, $eodd-accent-palette);
+.theme-eodd {
+  @include angular-material-theme($eodd-theme);
+  @include cop-theme($eodd-theme);
+}
+
+// brandweer theme
+$brandweer-primary-palette: mat-palette(palette($brandweer-primary));
+$brandweer-accent-palette: mat-palette(palette($brandweer-accent));
+$brandweer-theme: mat-light-theme(
+  $brandweer-primary-palette,
+  $brandweer-accent-palette
+);
+.theme-brandweer {
+  @include angular-material-theme($brandweer-theme);
+  @include cop-theme($brandweer-theme);
+}
+
+// dbbo theme
+$dbbo-primary-palette: mat-palette(palette($kmar-primary));
+$dbbo-accent-palette: mat-palette(palette($kmar-accent));
+$dbbo-theme: mat-light-theme($dbbo-primary-palette, $dbbo-accent-palette);
+.theme-dbbo {
+  @include angular-material-theme($dbbo-theme);
+  @include cop-theme($dbbo-theme);
+}
+
+// kmar theme
+$kmar-primary-palette: mat-palette(palette($kmar-primary)); //$kmar-blue
+$kmar-accent-palette: mat-palette(palette($kmar-accent));
+$kmar-theme: mat-light-theme($kmar-primary-palette, $kmar-accent-palette);
+.theme-kmar {
+  @include angular-material-theme($kmar-theme);
+  @include cop-theme($kmar-theme);
+}

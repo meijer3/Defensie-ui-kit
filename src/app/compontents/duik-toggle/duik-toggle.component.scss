@@ -1,0 +1,33 @@
+:host{
+
+
+}
+.mat-button-toggle-group{
+  border-radius: 0 !important;
+}
+.mat-button-toggle-label-content{
+  opacity: 0.6;
+  &:hover{
+    opacity: 1;
+  }
+}
+.mat-button-toggle{
+  font-weight: normal;
+  border-width: 1px;
+  border-style: solid;
+}
+.mat-button-toggle-checked{
+  color:inherit !important;
+  background-color: transparent !important;
+  font-weight: bold;
+  &::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0px;
+    left: 0px;
+    opacity: 0.12;
+  }
+}

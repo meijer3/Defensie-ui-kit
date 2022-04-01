@@ -1,0 +1,32 @@
+@import "themes";
+@import "typography"; 
+
+p,
+span {
+  font-size: mat-font-size($huisstijl-typography, body-1);
+}
+h1 {
+  font-size: mat-font-size($huisstijl-typography, title);
+  margin: 48px 0 8px;
+}
+h2 {
+  font-size: mat-font-size($huisstijl-typography, subheading-1);
+  margin: 24px 0 8px;
+}
+h3 {
+  font-size: mat-font-size($huisstijl-typography, subheading-2);
+  margin: 12px 0 8px;
+}
+
+.sub-text {
+  font-size: mat-font-size($huisstijl-typography, caption);
+  line-height: mat-line-height($huisstijl-typography, caption);
+  opacity: 0.5;
+}
+mat-card{
+  border-radius: 0 !important;
+}
+.mat-small,
+.mat-caption{
+  opacity: 0.8;
+}

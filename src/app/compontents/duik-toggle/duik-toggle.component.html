@@ -1,0 +1,7 @@
+<label fxLayout="row" fxLayoutAlign="space-between center" style="padding:16px 0;">
+    <ng-content></ng-content>
+    <mat-button-toggle-group [(ngModel)]="value" (ngModelChange)="changed()" #group="matButtonToggleGroup">
+        <mat-button-toggle *ngFor="let option of (options | keyvalue)" [value]="option.value">{{option.value}}
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</label>

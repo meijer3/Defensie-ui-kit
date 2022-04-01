@@ -1,0 +1,29 @@
+:host{
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.container{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  ::ng-deep{
+    .mat-list-item-content{
+      padding: 0 32px !important;
+    }
+  }
+}
+.sidenav{
+  flex: 0 0 240px;
+  height: calc(100vh - 56px);
+  overflow: auto;
+  position: sticky;
+  top: 56px;
+  border-right: 1px solid rgba(0,0,0,.12);
+}
+main {
+  padding: 48px 8px 24px 48px;
+  max-width: 800px;
+}

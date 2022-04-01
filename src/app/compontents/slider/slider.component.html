@@ -1,0 +1,18 @@
+<span class="mat-caption" style="padding-right: 8px;">{{label(min)}}</span>
+
+<mat-slider  
+    [min]=min 
+    [max]=max 
+    [step]=step 
+    [disabled]=disabled 
+    [(value)]=value 
+    [tickInterval]=tickInterval 
+    [displayWith]=label 
+    (change)=changed()
+    [invert]=invert
+    thumbLabel
+    ></mat-slider>
+    <!--   -->
+<!-- z -->
+
+<span class="mat-caption" style="padding-left: 8px;">{{label(max)}}</span>

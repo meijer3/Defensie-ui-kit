@@ -1,0 +1,16 @@
+<mat-toolbar class="main-header mat-elevation-z6" color="primary" style="font-size: 1rem; font-weight: bold;">
+  <mat-nav-list style="padding: 0;">
+    <button mat-button color="" routerLink="/components">Defensie UI kit</button>
+    <button mat-button color="" routerLink="/components/button" routerLinkActive="is-active">Components</button>
+    <button mat-button color="" routerLink="/typography" routerLinkActive="is-active">Typography</button>
+    <button mat-button color="" routerLink="/styles" routerLinkActive="is-active">Colors and styles</button>
+  </mat-nav-list>
+  <div style="flex:1 1 100%"></div>
+  <button mat-button [matMenuTriggerFor]="settingsMenu">
+    <mat-icon>format_color_fill</mat-icon>
+  </button>
+  <mat-menu #settingsMenu>
+    <button mat-menu-item *ngFor="let theme of themes" (click)="updateTheme(theme)">{{theme}}</button>
+  </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>

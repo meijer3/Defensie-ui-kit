@@ -1,0 +1,31 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &>span{
+  }
+  ::ng-deep{
+
+    .mat-slider:not(.mat-slider-disabled).cdk-focused.mat-slider-thumb-label-showing .mat-slider-thumb{
+      transform:none; // dont hide slider-circle
+    }
+    .mat-slider-thumb-label{
+      transform: translateY(0.33em) !important; // always show label (no scale...)
+      background-color: transparent !important;
+      .mat-slider-thumb-label-text{
+        transform: none !important; // always show label (no scale...)
+        opacity: 1 !important;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+
+
+.mat-slider{
+  width: 100%;
+  flex: 1 1;
+  min-height: 44px;
+  margin-top: 8px;
+}

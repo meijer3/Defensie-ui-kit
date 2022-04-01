@@ -1,0 +1,17 @@
+<div class="plusandmin">
+    <mat-label>
+        <ng-content></ng-content>
+    </mat-label>
+
+    <button mat-flat-button color="accent" (click)="dec()" [disabled]="value <= min">
+        <!-- <cop-icon name="min24Px"></cop-icon> -->
+        min
+    </button>
+
+    <input type="number" matInput [(ngModel)]='value' [min]=min [max]=max class="mat-form-field-flex">
+
+    <button mat-flat-button color="accent" (click)="inc()" [disabled]="max <= value">
+        <!-- <cop-icon name="plus24Px"></cop-icon> -->
+        plus
+    </button>
+</div>

@@ -1,0 +1,17 @@
+<mat-form-field appearance="outline" class="cop-dropdown">
+  <mat-label>{{ label }}</mat-label>
+  <!--   -->
+  <mat-select (selectionChange)="change()" [(ngModel)]="selected" [placeholder]="placeholder">
+    <mat-select-trigger *ngIf="selected">
+      <ng-container *ngTemplateOutlet="
+          content.templateRef;
+          context: { $implicit: selected }
+        "></ng-container>
+    </mat-select-trigger>
+
+    <mat-option *ngFor="let item of items" [value]="item">
+      <ng-container *ngTemplateOutlet="content.templateRef; context: { $implicit: item }"></ng-container>
+    </mat-option>
+  </mat-select>
+  <div name="deltaNaarRechtsKlein24Px" mattSuffix class="dropdown-arrow"></div>
+</mat-form-field>

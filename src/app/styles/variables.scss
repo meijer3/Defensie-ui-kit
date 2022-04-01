@@ -1,0 +1,70 @@
+@import "~@angular/material/theming";
+
+/************************
+ Rijks huisstijl
+************************/
+$huisstijl-typography: mat-typography-config(
+  $font-family: "'Sans', verdana, sans-serif",
+  // Not really used yet?
+  $display-1: mat-typography-level(1em, 1em, 100),
+  // Not really used yet?
+  $display-2: mat-typography-level(1em, 1em, 100),
+  // Not really used yet?  // Not really used yet?
+  $display-3: mat-typography-level(1em, 1em, 100),
+  // Not really used yet? // Not really used yet?
+  $display-4: mat-typography-level(1em, 1em, 100),
+  // H1 - (e.g. onboarding)
+  $headline: mat-typography-level(1em, 1.1em, 700),
+  // H2
+  $title: mat-typography-level(1.3em, 1em, 100),
+  // H3 - (e.g. onboarding sub)
+  $subheading-2: mat-typography-level(1em, 1em, 100),
+  // H3 - (e.g. onboarding sub)
+  $subheading-1: mat-typography-level(1em, 1em, 100),
+  // normal text
+  $body-1: mat-typography-level(1em, 1em, 100),
+  // bold text
+  $body-2: mat-typography-level(1em, 1em, 700),
+  // sub text
+  $caption: mat-typography-level(0.9em, 0.6em, 100),
+);
+
+$kmar-blue: #003380;
+$hemel-blue: #007bc7;
+$eodd: rgb(255, 179, 0);
+$dbbo: rgb(52, 45, 113);
+$mac: rgb(22, 170, 41);
+$brandweer: rgb(136, 0, 0);
+
+$orange: #e17000;
+$purple: #42145f;
+
+$grey-0: #ffffff;
+$grey-1: #f3f3f3;
+$grey-2: #e6e6e6;
+$grey-3: #cccccc;
+$grey-4: #b4b4b4;
+$grey-5: #999999;
+$grey-6: #696969;
+$grey-7: #535353;
+$grey-9: #000000;
+
+$error: #f9dfdd;
+$warn: #fff4dc;
+$confirm: #e1eddb;
+$explain: #d9ebf7;
+
+$link: #01689b;
+$link-visited: #884488;
+
+// Per tenant
+$dbbo-primary: $dbbo;
+$dbbo-accent: rgb(185, 173, 0);
+$eodd-primary: $eodd;
+$eodd-accent: $hemel-blue;
+$mac-primary: $mac;
+$mac-accent: rgb(185, 173, 0);
+$brandweer-primary: $brandweer;
+$brandweer-accent: $warn;
+$kmar-primary: $kmar-blue;
+$kmar-accent: $orange;
